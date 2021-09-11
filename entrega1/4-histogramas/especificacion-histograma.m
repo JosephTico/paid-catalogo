@@ -24,7 +24,7 @@ bar(0:255, h1)
 title('Histograma original');
 xlim([0 255])
 
-% Calcular el histograma estándar
+% Calcular el histograma estandar
 h2 = zeros(256, 1);
 [m, n] = size(B);
 for i = 1:255
@@ -35,7 +35,7 @@ bar(0:255, h2)
 title('Histograma estandar');
 xlim([0 255])
 
-% Calcular la distribución acumulativa
+% Calcular la distribucion acumulativa
 [m, n] = size(A);
 v_ac = zeros(256, 1);
 for i = 0:255
@@ -46,7 +46,7 @@ bar(0:255, v_ac)
 title('Distribucion acumulativa original');
 xlim([0 255])
 
-% Calcular la distribución acumulativa
+% Calcular la distribucion acumulativa
 [m2, n2] = size(B);
 v2_ac = zeros(256, 1);
 for i = 0:255
@@ -57,7 +57,7 @@ bar(0:255, v2_ac)
 title('Distribucion acumulativa estandar');
 xlim([0 255])
 
-% Metodos de ecualización
+% Metodos de ecualizacion
 C = zeros(m, n);
 A = double(A);
 for x = 1:m

@@ -19,7 +19,7 @@ bar(0:255, h2)
 title('Histograma');
 xlim([0 255])
 
-% Calcular la distribución acumulativa
+% Calcular la distribucion acumulativa
 [m, n] = size(A);
 v_ac = zeros(256, 1);
 for i = 0:255
@@ -30,7 +30,7 @@ bar(0:255, v_ac)
 title('Distribucion acumulativa');
 xlim([0 255])
 
-% Metodos de ecualización
+% Metodos de ecualizacion
 B = zeros(m, n);
 A = double(A);
 for x = 1:m
