@@ -10,11 +10,12 @@ plt.imshow(image0, cmap='gray')
 # plt.title('original image')
 
 new_image = np.zeros(image0.shape, image0.dtype)
-alpha = 1.0 
-beta = 100 
+a = -1
+b = 255
 
-#image1= 1*image0+100
-new_image = 1*image0 + 50
+for y in range(image0.shape[0]):
+  for x in range(image0.shape[1]):
+    new_image[y,x] = np.clip(a*image0[y,x] + b, 0, 255)
 
 plt.subplot(1,2,2)
 plt.imshow(new_image, cmap='gray')
