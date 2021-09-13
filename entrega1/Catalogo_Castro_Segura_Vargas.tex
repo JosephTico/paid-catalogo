@@ -1,0 +1,131 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,multicol,enumerate}
+\usepackage{amsfonts}
+\usepackage{multicol}
+\usepackage{minted}
+\setminted{frame=lines,linenos=true}
+
+\usepackage{wrapfig}
+
+
+%%%%% Formato REVISTA DE MATEMÁTICA: TEORÍA Y APLICACIONES%%%%%%%
+\topmargin=-2cm\textheight=23cm\textwidth=19cm
+\oddsidemargin=-1cm\evensidemargin=-1cm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\parskip=0.25cm
+\parindent=0mm
+
+\renewcommand{\figurename}{Figura}
+
+\usepackage[dvips]{graphicx}
+\usepackage{url}
+
+%Utilizamos el paquete para incorporar graficos postcript
+
+
+%\usepackage{amssymb}
+\usepackage[psamsfonts]{amssymb} %paquetes para los simbolos matematicos
+\usepackage{latexsym}
+
+\usepackage{color}
+
+\usepackage[framed]{matlab-prettifier}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+
+
+\renewcommand{\lstlistingname}{C\'odigo}
+
+
+\definecolor{mygray}{rgb}{0.4,0.4,0.4}
+\definecolor{mygreen}{rgb}{0,0.8,0.6}
+\definecolor{myorange}{rgb}{1.0,0.4,0}
+
+
+
+
+\begin{document}
+
+%Encabezado
+Instituto Tecnológico de Costa Rica \hfill  CE 5201 - Procesamiento y Análisis de Imágenes Digitales\\
+Ingeniería en Computadores \hfill Semestre: I - 2021\\
+
+
+
+
+\begin{center}\textbf{\huge Catálogo de Algoritmos}  \end{center}
+
+{\bf Integrantes: }
+\begin{itemize}
+\item Daniel Castro Campos - Carnet 2016165624
+\item Gustavo Segura Umaña - Carnet 2016089824
+\item Joseph Vargas Blanco - Carnet 2016200170
+\end{itemize}
+
+\section{Semana 3: SVD e imágenes}
+\subsection{Compresión de imágenes}
+\inputminted{matlab}{1-compresion/1_1_compresion.m}
+\subsection{Compresión de imágenes con Proyección Bilateral}
+\inputminted{python}{1-compresion/1_2_compresion_proyeccion_bilateral.py}
+
+
+\section{Semana 4: Operaciones geométricas e interpolación}
+
+
+\subsection{Filtro de la mediana}
+\inputminted{matlab}{2-transformadas_afines/2_1_mediana.m}
+
+\subsection{Transformadas Afines Lineales: Rotación}
+\inputminted{python}{2-transformadas_afines/2_2_1_rotar.py}
+
+\subsection{Transformadas Afines Lineales: Traslación}
+\inputminted{python}{2-transformadas_afines/2_2_2_trasladar.py}
+
+\subsection{Transformadas Afines No Lineales: Efecto Rippling}
+\inputminted{python}{2-transformadas_afines/2_3_rippling.py}
+\inputminted{python}{2-transformadas_afines/2_3_rippling_animado.py}
+
+
+
+
+
+
+\section{Semana 5: Transformaciones a escala de grises}
+
+\subsection{Transformacion Lineal}
+\inputminted{python}{3-transformaciones/transformacion-lineal.py}
+
+\subsection{Transformacion Autocontraste}
+\inputminted{matlab}{3-transformaciones/transformada-autocontraste.m}
+
+\subsection{Transformacion Negativo}
+\inputminted{python}{3-transformaciones/transformada-negativo.py}
+
+\subsection{Transformacion Gamma}
+\inputminted{python}{3-transformaciones/transformada-gamma.py}
+
+\subsection{Transformacion Logaritmica}
+\inputminted{matlab}{3-transformaciones/transformada-logaritmica.m}
+
+
+\section{Semana 6: Histogramas}
+
+\subsection{Mostrar el histograma}
+\inputminted{python}{4-histogramas/mostrar-histograma.py}
+
+\subsection{Ecualización de histograma}
+\inputminted{matlab}{4-histogramas/ecualizacion-histograma.m}
+
+\subsection{Estiramiento del histograma}
+\inputminted{python}{4-histogramas/estirar-histograma.py}
+
+\subsection{Reducción del histograma}
+\inputminted{python}{4-histogramas/reducir-histograma.py}
+
+\subsection{Especificación de histograma}
+\inputminted{matlab}{4-histogramas/especificacion-histograma.m}
+
+
+\end{document}
