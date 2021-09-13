@@ -5,7 +5,6 @@ pkg load image;
 
 I_color = imread("WingedFigure.jpg");
 A = I_color(:,:,1);
-save("A.mat","A");
 
 A =im2double(A);
 val_sing=diag(A);
