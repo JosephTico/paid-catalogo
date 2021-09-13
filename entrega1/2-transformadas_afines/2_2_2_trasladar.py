@@ -9,7 +9,7 @@ def imageToArray(filename:str, rgb:bool=False):
     img_array = np.array(img)
     return img_array
 
-def translation(A:np.array, x:int, y:int):
+def traslation(A:np.array, x:int, y:int):
     result = np.zeros(A.shape, dtype=np.uint8)
     M, N = A.shape[0],A.shape[1]
     for i in range(M):
@@ -21,7 +21,7 @@ def translation(A:np.array, x:int, y:int):
     return result
 
 A = imageToArray("WingedFigure.jpg")
-B = translation(A, 50,200)
+B = traslation(A, 50,200)
 
 
 plt.subplot(1, 2, 1)
