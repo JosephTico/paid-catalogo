@@ -1,6 +1,6 @@
 pkg load image;
 
-% Filtro Gaussiano (Paso Bajo)
+% Filtro Gaussiano (Paso Alto)
 clc; clear; close all;
 I = imread('edificio_china.jpg');
 subplot(2, 2, 1);
@@ -29,10 +29,11 @@ for i = 1:M
 endfor
 
 % Sigma
-S = 50;
+S = 10;
   
 % Filtro Gaussiano
 H = 1-exp(-(D.^2)/(2*S^2)); 
+H = fftshift(H);
 
 % Convolución
 G = H.*F;

@@ -14,7 +14,25 @@ M, N = image.shape[:2]
 # Calcular DFT-2D
 fft = np.fft.fft2(rgb2gray(image))
 
+# Construir matriz de distancias
+u = np.arange(M)
+v = np.arange(N)
+idx = np.where(u > M/2)
+u[idx] = u[idx] - M
+idx = np.where(v > N/2)
+v[idx] = v[idx] - N
 
+V, U = np.meshgrid(v, u)
+
+D = np.sqrt(U**2 + V**2)
+
+# Aplicar filtro
+D0 = 10
+order = 2
+H = 1 / (1 + (D0/D)**(2*order))
+
+
+freq_result = fft * H
 
 # FFT inverso
 img_result = np.fft.ifft2(freq_result)
