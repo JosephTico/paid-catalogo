@@ -1,0 +1,1 @@
+% Obtener el esqueleto de una imagen binaria
