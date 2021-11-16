@@ -10,10 +10,7 @@ B=imnoise(A,'gaussian');
 subplot(1,2,1) 
 imshow(B)
 
-A_t=filt_prom_arm(B);
 
-subplot(1,2,2)
-imshow(A_t)
 
 function A_t=filt_prom_arm(B)
   
@@ -71,3 +68,9 @@ function A_t=filt_prom_arm(B)
 
   A_t=uint8(A_t);
 endfunction
+
+
+A_t=filt_prom_arm(B);
+
+subplot(1,2,2)
+imshow(A_t)
