@@ -21,11 +21,9 @@ plt.imshow(A, cmap='gray')
 m, n = A.shape
 
 # Histograma de la imagen original
-histogram, bin_edges = np.histogram(A, bins=256, range=(0, 2))
 plt.subplot(2,2,2);
 plt.title('Histograma Original')
-plt.hist(A.ravel(), bins = 256, range=(0, 255))
-
+plt.hist(A.ravel(), bins = 256, range=(0, 256))
 
 # Umbral basico global
 T = 165; iter = 16;
@@ -44,46 +42,36 @@ for k in range (1,iter):
 
 C = np.zeros((3,5));
 C = (A>T) * 1;
-#C = (A<=T) * 0;
+
 plt.subplot(2,2,3);
 plt.imshow(C, cmap='gray')
 plt.title('Umbral Basico T=' + str(T));
 
-
-
 # Umbral metodo de Otsu
 # Paso 0: Calcular el histograma de la imagen A
-#[q,_] = np.histogram(A);
 [q,_] = np.histogram(A, bins=256, range=(0, 255))
 
 # Paso 1: Calcular el histograma normalizado
 h = (1/(m*n))
-h = (h*q).round(3)
-
-
-
+h = (h*q)
+print(h)
 
 # Paso 2: Calcular vector de suma acumulada
 p = np.zeros((256,1))
 for k in range (0,256):
   p[k] = np.sum(h[0:k])
 
-
 # Paso 3: Calcular vector de suma acumulada con peso
 mc = np.zeros((256,1))
 for k in range(0,256):
-  #temp = np.arange(start=0, stop=k-1)
-  
   temp = np.arange(start=0, stop=k)
   temp = temp.transpose()
-  # print("____")
-  # print(temp)
-  # print(h[0:k])
   mc[k] = np.sum(h[0:k]*temp) 
 
 # Paso 4: Calcular el maximo de mc
 mg = mc[255];
 print("mg:"+str(mg))
+
 # Paso 5: Calcular vector de varianza entre clases
 N = mg*p
 N = np.subtract(N,mc)
@@ -92,13 +80,11 @@ N = np.power(N,2)
 D = p*(1-p)
 
 delta2b = np.divide(N,D,out=np.zeros_like(N), where=D!=0)
-print(delta2b)
 
 # Paso 6: Posicion maxima del vector delta2b
-# [_,T] = np.max(delta2b)
 T = np.argmax(delta2b)
 print("T:"+str(T))
-#T = T-1; # Ya que Octave cuenta a partir del 1 y no del 0
+
 # Mostrar imagen
 D = np.zeros((m,n));
 D = (A>T) * 1;

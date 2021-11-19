@@ -1,5 +1,7 @@
 % Ejemplo de Umbral
-clc; clear; close all;
+clc; 
+clear; 
+close all;
 pkg load image;
 A = imread('imagen4.jpg');
 subplot(2,2,1);
@@ -37,10 +39,12 @@ title(['Umbral Basico T=' num2str(T)]);
 % Umbral metodo de Otsu
 % Paso 0: Calcular el histograma de la imagen A
 [q,~] = imhist(A);
+q
 
 
 % Paso 1: Calcular el histograma normalizado
 h = (1/(m*n))*q;
+h
 
 % Paso 2: Calcular vector de suma acumulada
 p = zeros(256,1);
@@ -57,6 +61,7 @@ endfor
 
 % Paso 4: Calcular el maximo de mc
 mg = mc(256);
+mg
 % Paso 5: Calcular vector de varianza entre clases
 N = (mg*p-mc).^2;
 D = p.*(1-p);
